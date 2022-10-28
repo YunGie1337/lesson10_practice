@@ -13,16 +13,17 @@ void binnarySearch() {
   int count = 0;
 
   while (answer != "yes") {
-    count++;
     print('Ваше число $mid?');
     answer = stdin.readLineSync()!;
 
     if (answer == 'greater') {
       min = mid;
       mid = (mid + max) ~/ 2;
+      count++;
     } else if (answer == 'less') {
       max = mid;
       mid = (min + max) ~/ 2;
+      count++;
     } else if (answer == 'yes') {
       print('Конец игры');
       print("Программа угадала за $count шагов");
